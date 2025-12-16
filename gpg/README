@@ -1,0 +1,22 @@
+$ gpg -a -o keys.asc --export stachev
+
+Затем передаем файл на целевое устройство и импортируем ключ:
+$ gpg --import keys.asc
+
+https://losst.ru/shifrovanie-fajlov-i-papok-v-linux
+ ------------------------------------------------------
+
+Создается еще один подключ для подписи.
+
+gpg --export > pub_stachev
+
+gpg --export-secret-subkeys stachev > subkeys_stachev
+
+gpg --export-secret-key >secret_stachev
+
+gpg --import subkeys
+
+shred --remove subkeys
+
+
+https://www.linux.org.ru/forum/security/11253310
